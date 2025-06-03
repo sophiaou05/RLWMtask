@@ -1,0 +1,198 @@
+#title {
+  font-size: 18pt;
+  text-align: center;
+  margin: 0 auto;
+  display: none;
+  margin-top: 100px;
+
+}
+
+.centered-text {
+  text-align: center;
+  width: 100%;           /* Make text span the full width */
+  margin-top: 20px;      /* Adjust spacing from the canvas as needed */
+}
+
+.demo{
+  height:300px;
+}
+
+
+#askFull {
+  text-align: center;
+}
+
+#consent-title {
+  font-size: 18pt;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#consent-text {
+  font-size: 14pt;
+  text-align: center;
+  margin: 0 auto;
+  width: 75%;
+}
+
+#consentButton {
+  text-align: center;
+  display: none;
+}
+
+#loading {
+  font-size: 12pt;
+  text-align: center;
+}
+
+
+body {
+  font-family: Helvetica,Arial;
+  background-color: #CECCCE;
+  color:'black';
+  font-size: 14pt;
+  /* hide scoll bar */
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+/* hide scroll bar */
+body::-webkit-scrollbar { /* WebKit */
+  width: 0;
+  height: 0;
+}
+
+.clickButton {
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.clickButton_text {
+  display: table;
+  vertical-align: center;
+  color: black;
+  font-size: 14pt;
+  border: 3px outset gray;
+  background-color: #CCCCCC;
+  padding: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  margin:0 auto;
+  margin-bottom: 10px;
+}
+
+
+.instr {
+  display: none;
+  text-align: center;
+}
+
+#instructions {
+  display: block;
+  max-width: 75%;
+  margin: 0 auto;
+  margin-top: 0px;
+  height: 200px;
+}
+
+#buttonGroup {
+  display: none;
+  text-align: center;
+}
+
+#consent{
+  display: none;
+}
+
+
+#reach_layer {
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin-left:-400px;
+    margin-top:-365px;
+}
+
+#reset_layer {
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin-left:-400px;
+    margin-top:-365px;
+}
+
+#container {
+  display: none;
+}
+
+.myCanvas {
+  border:none;
+
+  /*border: 5px solid black;
+  /* border: 0px solid black; */
+  /* vertical-align: middle; */
+  /* cursor: none; */
+  /* display:none; */
+}
+
+
+.progress {
+  /* text-align: center; */
+  display: none;
+  height: 10px;
+}
+
+#progressContainer {
+  /* text-align: center; */
+  display: none;
+}
+
+
+
+#progressText {
+  font-size: 10pt;
+  color: black;
+  /* font-weight: bold; */
+  /* margin-top: 10px; */
+  margin-bottom: 5px;
+}
+
+#progressOutline {
+  display: inline-block;
+  background: white;
+  border: 3px solid black;
+  width: 120px;
+  margin: 5 auto;
+  margin-bottom: 5px;
+}
+
+#progressBar {
+  background: gray;
+  width: 0px;
+  margin-bottom: 5px;
+}
+
+
+.doneTextStyle {
+  text-align: center;
+  display: none;
+}
+
+#commentBox {
+  display: none;
+}
+
+#debriefText {
+  font-size: 12pt;
+  width: 60%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#submitButton {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+}
