@@ -309,6 +309,13 @@ function drawFrameAndCircle(ctx) {
   ctx.arc(canvas_center_x, canvas_center_y + frameYOffset, frameSize / 2, 0, 2 * Math.PI);
   ctx.stroke();
   ctx.closePath();
+
+   // Draw green center circle
+  ctx.beginPath();
+  ctx.fillStyle = 'green';
+  ctx.arc(canvas_center_x, canvas_center_y + frameYOffset, 8, 0, 2 * Math.PI); // radius = 8px
+  ctx.fill();
+  ctx.closePath();
 }
 
 
@@ -533,7 +540,7 @@ function centerCheckHandler(e) {
   const now = performance.now();
 
   // If cursor is in center
-  if (dist < cell_width) {
+  if (dist < 8) {
     if (!ready) {
       // Start timing only once when first entering
       if (centerEntryTime === null) {
@@ -690,6 +697,9 @@ function centerCheckHandler(e) {
     const fontStyle = textSize + 'px Helvetica';
     const textColor = 'black';
     drawText(txtChoice, (canvas_width - measureTextWidth(reset_ctx, txtChoice, fontStyle))/2, (canvas_height + textSize)/2, fontStyle, textColor);
+    document.exitPointerLock();
+    document.documentElement.style.cursor = 'auto';
+    document.body.style.cursor = 'auto';
     setTimeout(reachScene, display_timeout_duration);
   }
 
@@ -918,7 +928,11 @@ function ChangeInstructionsScreen(buttonText, buttonFunction, incremVal, pracIns
     if (pracInstr == true) {
       $('#Instruction' + instrInd).fadeOut(400).slideUp();
       instrInd = instrInd + incremVal;
-      $('#PracticeInstructions').delay(400).fadeIn();
+      if (instrInd < numInstr) {
+        $('#Instruction' + instrInd).delay(400).fadeIn();
+      } else {
+        $('#FinishedInstr').delay(400).fadeIn();
+      }
     } else {
       $('#Instruction' + instrInd).fadeOut(400).slideUp();
       $('#expTrials').fadeOut(400).slideUp();
@@ -969,7 +983,7 @@ function NextInstruction() {
   } else {
     calcFPS();
     $('#buttonGroup').css('margin-top',"0");
-    $('#FinishedInstr').show();
+    //$('#FinishedInstr').show();
     buttonText = 'Start Experiment';
     buttonFunction = 'nextTrial()';
     incremVal = 1;
