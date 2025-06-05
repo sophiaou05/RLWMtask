@@ -71,7 +71,7 @@ for (let folder = 1; folder <= 18; folder++) {
 }
 
 
-fetch('helper_files/tf_trimblock12.json')
+fetch('helper_files/trim1234.json')
   .then(response => response.json())
   .then(data => {
     tfData = data;
